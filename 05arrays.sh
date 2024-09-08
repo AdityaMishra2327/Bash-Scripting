@@ -1,52 +1,33 @@
 #!/bin/bash
 
-
-#Array
-
-
+# Declare and initialize an indexed array
 myArray=( 1 2 "Hello" "man" 55 )
 
+# Display all values in the array
+echo "All the values in the array are: ${myArray[*]}"
 
+# Access specific values by their index
+echo "First value: ${myArray[0]}"
+echo "Second value: ${myArray[1]}"
 
+# Find and display the length of the array
+echo "Number of values in the array: ${#myArray[*]}"
 
-echo "All the values in the array are ${myArray[*]}"
+# Extract values from index 2 to 3
+echo "Values from index 2 to 3: ${myArray[*]:2:2}"
 
-
-echo "${myArray[0]}"
-echo "${myArray[1]}"
-
-#How to find the length of the array 
-
-echo "No of values in the array is ${#myArray[*]}"
-
-#HOw to get specific values 
-
-echo "values from index 2-3 ${myArray[*]:2:2}"
-
-#How to update an Array 
-
-
-
-
+# Update the array by appending new values
 myArray+=( 1 3 5 )
+echo "Updated array: ${myArray[*]}"
 
-
-
-
-
-echo "My updated Array is ${myArray[*]}" 
-
+# Declare an associative array
 declare -A myArray2
+myArray2=( [name]="Aditya" [age]=20 [city]="Delhi" )
 
-
-
-
-
-myArray2=( [name]=Aditya [age]=20 [city]=Delhi )
-
-echo "Name is ${myArray2[Name]}"
-echo "Age is ${myArray2[age]}"
-echo "I live in ${myArray2[city]}"
+# Access and display values from the associative array
+echo "Name: ${myArray2[name]}"
+echo "Age: ${myArray2[age]}"
+echo "City: ${myArray2[city]}"
 
 
 
